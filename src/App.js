@@ -2,6 +2,7 @@
 // import './App.css';
 
 import style from './App.module.scss'
+import ProgressControl from './components/step/ProgressControl';
 import Step1 from './components/step/Step1';
 import Step2 from './components/step/Step2';
 import Step3 from './components/step/Step3';
@@ -174,39 +175,7 @@ function App() {
         </section>
       </section>
       {/* progress-control */}
-      <section className="progress-control-container col col-lg-6 col-sm-12">
-        <section className="button-group col col-12" data-phase="address">
-          <button className="next">
-            下一步
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-right-arrow" />
-            </svg>
-          </button>
-        </section>
-        <section className="button-group col col-12" data-phase="shipping">
-          <button className="prev">
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-left-arrow" />
-            </svg>
-            上一步
-          </button>
-          <button className="next">
-            下一步
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-right-arrow" />
-            </svg>
-          </button>
-        </section>
-        <section className="button-group col col-12" data-phase="credit-card">
-          <button className="prev">
-            <svg className="cursor-point">
-              <use xlinkHref="#svg-icon-left-arrow" />
-            </svg>
-            上一步
-          </button>
-          <button className="next">確認下單</button>
-        </section>
-      </section>
+     <ProgressControl/>
     </div>
   </main>
   {/* footer */}
