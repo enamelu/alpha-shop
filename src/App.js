@@ -8,6 +8,19 @@ import Step2 from './components/step/Step2';
 import Step3 from './components/step/Step3';
 import StepProgress from './components/step/StepProgress';
 
+import logo from './icons/alphalogo.svg';
+import alphaShop from './icons/alphaShop.svg';
+import search from './icons/search.svg';
+import cart from './icons/cart.svg';
+import moon from './icons/moon.svg';
+
+import facebook from './icons/facebook.svg';
+import whatsapp from './icons/whatsapp.svg';
+import instagram from './icons/instagram.svg';
+
+
+
+
 function App() {
   return (
     <>
@@ -58,18 +71,21 @@ function App() {
         <ul className="nav-list site-action-list">
           {/* search */}
           <li className="nav-item">
+            <img src={search} className="icon-logo cursor-point" alt="search" />
             <svg className="nav-icon cursor-point">
               <use xlinkHref="#svg-icon-search" />
             </svg>
           </li>
           {/* cart */}
           <li className="nav-item">
+            <img src={cart} className="icon-logo cursor-point" alt="cart" />
             <svg className="nav-icon cursor-point">
               <use xlinkHref="#svg-icon-cart" />
             </svg>
           </li>
           <li id="theme-toggle" className="nav-item">
             {/* moon */}
+            <img src={moon} className="icon-logo cursor-point" alt="moon" />
             <svg className="nav-icon cursor-point">
               <use xlinkHref="#svg-icon-moon" />
             </svg>
@@ -82,6 +98,8 @@ function App() {
       </nav>
       {/* logo */}
       <a className="header-logo-container" href="#">
+        <img src={logo} className="icon-logo cursor-point" alt="logo" />
+        <img src={alphaShop} className="icon-logo cursor-point" alt="logo" />
         <svg className="icon-logo cursor-point">
           <use xlinkHref="#svg-icon-logo" />
         </svg>
@@ -121,8 +139,7 @@ function App() {
           >
             <img
               className="img-container"
-              src="./public/images/product-1.jpg"
-            />
+              src={require('./images/product-1.jpg')} alt=""/>
             <div className="product-info">
               <div className="product-name">破壞補丁修身牛仔褲</div>
               <div className="product-control-container">
@@ -146,8 +163,7 @@ function App() {
           >
             <img
               className="img-container"
-              src="./public/images/product-2.jpg"
-            />
+              src={require('./images/product-2.jpg')} alt=""/>
             <div className="product-info">
               <div className="product-name">刷色直筒牛仔褲</div>
               <div className="product-control-container">
@@ -182,6 +198,8 @@ function App() {
   <footer className="site-footer">
     <div className="footer-container">
       <div className="footer-logo-container">
+        <img src={logo} className="icon-logo" alt="icon-logo" />
+        <img src={alphaShop} className="icon-logo cursor-point" alt="logo" />
         <svg className="icon-logo">
           <use xlinkHref="#svg-icon-logo" />
         </svg>
@@ -236,12 +254,15 @@ function App() {
         <div className="section-content">
           <div className="tel-info">+886 02123-45678</div>
           <div className="social-icon-group">
+            <img src={facebook} className="social-icon cursor-point" alt="facebook" />
             <svg className="social-icon cursor-point">
               <use xlinkHref="#svg-icon-facebook" />
             </svg>
+            <img src={instagram} className="social-icon cursor-point" alt="instagram" />
             <svg className="social-icon cursor-point">
               <use xlinkHref="#svg-icon-instagram" />
             </svg>
+            <img src={whatsapp} className="social-icon cursor-point" alt="whatsapp" />
             <svg className="social-icon cursor-point">
               <use xlinkHref="#svg-icon-whatsapp" />
             </svg>
