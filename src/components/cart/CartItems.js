@@ -1,55 +1,33 @@
+import CartItem from './CartItem';
+
+const data = [ 
+  {
+    id: '1',
+    name: '貓咪罐罐',
+    img: 'https://picsum.photos/300/300?text=1',
+    price: 100,
+    quantity: 2,
+  },
+  {
+    id: '2',
+    name: '貓咪干干',
+    img: 'https://picsum.photos/300/300?text=2',
+    price: 200,
+    quantity: 1,
+  },
+]
 export default function CartItems(){
   return(
     <>
-<section className="product-list col col-12" data-total-price={0}>
-          <div
+      <section className="product-list col col-12" data-total-price={0}>
+          <CartItem
             className="product-container col col-12"
-            data-count={0}
-            data-price={3999}
-          >
-            <img
-              className="img-container"
-              src={require('./images/product-1.jpg')} alt=""/>
-            <div className="product-info">
-              <div className="product-name">破壞補丁修身牛仔褲</div>
-              <div className="product-control-container">
-                <div className="product-control">
-                  <svg className="product-action minus">
-                    <use xlinkHref="#svg-icon-minus" />
-                  </svg>
-                  <span className="product-count" />
-                  <svg className="product-action plus">
-                    <use xlinkHref="#svg-icon-plus" />
-                  </svg>
-                </div>
-              </div>
-              <div className="price" />
-            </div>
-          </div>
-          <div
+            itemData={data[0]}
+          />
+          <CartItem
             className="product-container col col-12"
-            data-count={0}
-            data-price={1299}
-          >
-            <img
-              className="img-container"
-              src={require('./images/product-2.jpg')} alt=""/>
-            <div className="product-info">
-              <div className="product-name">刷色直筒牛仔褲</div>
-              <div className="product-control-container">
-                <div className="product-control">
-                  <svg className="product-action minus">
-                    <use xlinkHref="#svg-icon-minus" />
-                  </svg>
-                  <span className="product-count" />
-                  <svg className="product-action plus">
-                    <use xlinkHref="#svg-icon-plus" />
-                  </svg>
-                </div>
-              </div>
-              <div className="price" />
-            </div>
-          </div>
+            itemData={data[1]}
+          />
         </section>
       </>
   );
