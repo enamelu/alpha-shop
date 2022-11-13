@@ -1,3 +1,7 @@
+ import minus from '../../icons/minus.svg';
+  import plus from '../../icons/plus.svg';
+
+ 
  export default function CartItem({itemData}){
   return(
  <div
@@ -12,13 +16,9 @@
               <div className="product-name">{itemData.name}</div>
               <div className="product-control-container">
                 <div className="product-control">
-                  <svg className="product-action minus">
-                    <use xlinkHref="#svg-icon-minus" />
-                  </svg>
-                  <span className="product-count" />
-                  <svg className="product-action plus">
-                    <use xlinkHref="#svg-icon-plus" />
-                  </svg>
+                  <img src={minus} className="product-action minus" alt="minus" />
+                  <span className="product-count" >{itemData.quantity}</span>
+                  <img src={plus} className="product-action plus" alt="plus" />
                 </div>
               </div>
               <div className="price" >{`$${itemData.price}`}</div>
