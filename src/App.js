@@ -7,6 +7,7 @@ import Step1 from './components/step/Step1';
 import Step2 from './components/step/Step2';
 import Step3 from './components/step/Step3';
 import StepProgress from './components/step/StepProgress';
+import Cart from './components/cart/Cart';
 
 import logo from './icons/alphalogo.svg';
 import alphaShop from './icons/alphaShop.svg';
@@ -129,67 +130,7 @@ function App() {
         </section>
       </section>
       {/* cart */}
-      <section className="cart-container col col-lg-5 col-sm-12">
-        <h3 className="cart-title">購物籃</h3>
-        <section className="product-list col col-12" data-total-price={0}>
-          <div
-            className="product-container col col-12"
-            data-count={0}
-            data-price={3999}
-          >
-            <img
-              className="img-container"
-              src={require('./images/product-1.jpg')} alt=""/>
-            <div className="product-info">
-              <div className="product-name">破壞補丁修身牛仔褲</div>
-              <div className="product-control-container">
-                <div className="product-control">
-                  <svg className="product-action minus">
-                    <use xlinkHref="#svg-icon-minus" />
-                  </svg>
-                  <span className="product-count" />
-                  <svg className="product-action plus">
-                    <use xlinkHref="#svg-icon-plus" />
-                  </svg>
-                </div>
-              </div>
-              <div className="price" />
-            </div>
-          </div>
-          <div
-            className="product-container col col-12"
-            data-count={0}
-            data-price={1299}
-          >
-            <img
-              className="img-container"
-              src={require('./images/product-2.jpg')} alt=""/>
-            <div className="product-info">
-              <div className="product-name">刷色直筒牛仔褲</div>
-              <div className="product-control-container">
-                <div className="product-control">
-                  <svg className="product-action minus">
-                    <use xlinkHref="#svg-icon-minus" />
-                  </svg>
-                  <span className="product-count" />
-                  <svg className="product-action plus">
-                    <use xlinkHref="#svg-icon-plus" />
-                  </svg>
-                </div>
-              </div>
-              <div className="price" />
-            </div>
-          </div>
-        </section>
-        <section className="cart-info shipping col col-12">
-          <div className="text">運費</div>
-          <div className="price" />
-        </section>
-        <section className="cart-info total col col-12">
-          <div className="text">小計</div>
-          <div className="price" />
-        </section>
-      </section>
+      <Cart className="cart-container col col-lg-5 col-sm-12"/>
       {/* progress-control */}
      <ProgressControl/>
     </div>
