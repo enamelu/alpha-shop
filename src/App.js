@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 // import './App.css';
 
-import style from './App.module.scss'
 import ProgressControl from './components/step/ProgressControl';
 import Step1 from './components/step/Step1';
 import Step2 from './components/step/Step2';
