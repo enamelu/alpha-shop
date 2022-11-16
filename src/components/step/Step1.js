@@ -1,5 +1,4 @@
 export default function Step1(){
- 
   return(
 <>
 <form className="col col-12" data-phase="address">
