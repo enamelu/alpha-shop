@@ -2,6 +2,9 @@
 
 This project is the assignment of Alpha-Camp lecture using React.
 
+#Project Preview (Assignment 3)
+![MyImage](https://github.com/enamelu/alpha-shop/blob/main/alpha-shop-preview-assignment3.png)
+
 #Project Preview (Assignment 2)
 ![MyImage](https://github.com/enamelu/alpha-shop/blob/main/alpha-shop-preview-assignment2.png)
 
