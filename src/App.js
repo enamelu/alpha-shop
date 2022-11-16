@@ -20,7 +20,7 @@ import whatsapp from "./icons/whatsapp.svg";
 import instagram from "./icons/instagram.svg";
 
 function App() {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
   return (
     <>
       <meta charSet="UTF-8" />
@@ -133,7 +133,7 @@ function App() {
           {/* cart */}
           <Cart className="cart-container col col-lg-5 col-sm-12" />
           {/* progress-control */}
-          <ProgressControl step={step}/>
+          <ProgressControl step={step} setStep={setStep} />
         </div>
       </main>
       {/* footer */}

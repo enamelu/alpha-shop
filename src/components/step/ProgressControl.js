@@ -1,9 +1,17 @@
-export default function ProgressControl({step}){
+export default function ProgressControl({step, setStep}){
+  function handleClickNext(e) {
+    e.stopPropagation()
+    setStep(step + 1)  
+  } 
+  function handleClickPrivious(e) {
+    e.stopPropagation()
+    setStep(step - 1)  
+  }
   let progressControlButtons;
   if(step === 1) {
     progressControlButtons = (
       <section className="button-group col col-12" data-phase="address">
-        <button className="next">
+        <button className="next" onClick={handleClickNext}> 
           下一步
           <svg className="cursor-point">
             <use xlinkHref="#svg-icon-right-arrow" />
@@ -14,13 +22,13 @@ export default function ProgressControl({step}){
   } else if (step === 2){
     progressControlButtons = (
       <section className="button-group col col-12" data-phase="shipping">
-        <button className="prev">
+        <button className="prev" onClick={handleClickPrivious}>
           <svg className="cursor-point">
             <use xlinkHref="#svg-icon-left-arrow" />
           </svg>
           上一步
         </button>
-        <button className="next">
+        <button className="next" onClick={handleClickNext}>
           下一步
           <svg className="cursor-point">
             <use xlinkHref="#svg-icon-right-arrow" />
@@ -31,7 +39,7 @@ export default function ProgressControl({step}){
   } else {
     progressControlButtons = (
       <section className="button-group col col-12" data-phase="credit-card">
-        <button className="prev">
+        <button className="prev" onClick={handleClickPrivious}>
           <svg className="cursor-point">
             <use xlinkHref="#svg-icon-left-arrow" />
           </svg>
