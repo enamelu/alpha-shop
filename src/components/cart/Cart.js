@@ -1,6 +1,7 @@
 import CartItems from './CartItems';
+import { useState } from 'react';
 
-const data = [ 
+const initialData = [ 
   {
     id: '1',
     name: '貓咪罐罐',
@@ -17,18 +18,19 @@ const data = [
   },
 ]
 
-let totalPrice = 0;
-for (let i =0 ; i<data.length ;i++){
-  totalPrice += data[i].price * data[i].quantity
-}
+
 
 export default function Cart(){
+  const [data, setData] = useState(initialData);
+  let totalPrice = 0;
+  for (let i =0 ; i<data.length ;i++){
+    totalPrice += data[i].price * data[i].quantity
+  }
   return(
     <>
       <section className="cart-container col col-lg-5 col-sm-12" >
         <h3 className="cart-title">購物籃</h3>
-        <CartItems className="product-list col col-12" data-total-price={0} 
-        data={data}/>   
+        <CartItems className="product-list col col-12" data={data} setData={setData}/>   
         <section className="cart-info shipping col col-12">
           <div className="text">運費</div>
           <div className="price">免費</div> 
