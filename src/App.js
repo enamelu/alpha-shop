@@ -7,7 +7,7 @@ import Step2 from "./components/step/Step2";
 
 
 import StepProgress from "./components/step/StepProgress";
-import Cart from "./components/cart/Cart";
+import Cart from "./components/Cart/Cart";
 
 import logo from "./icons/alphalogo.svg";
 import alphaShop from "./icons/alphaShop.svg";
@@ -18,11 +18,13 @@ import moon from "./icons/moon.svg";
 import facebook from "./icons/facebook.svg";
 import whatsapp from "./icons/whatsapp.svg";
 import instagram from "./icons/instagram.svg";
+import { CartContext, initialData } from './Context/CartContext';
 
 function App() {
   const [step, setStep] = useState(1);
+  const [data, setData] = useState(initialData);
   return (
-    <>
+    <CartContext.Provider value={{data, setData}}>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>ALPHA Shop</title>
@@ -229,7 +231,7 @@ function App() {
           </section>
         </div>
       </footer>
-    </>
+    </CartContext.Provider>
   );
 }
 

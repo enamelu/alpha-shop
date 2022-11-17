@@ -1,8 +1,12 @@
- import minus from '../../icons/minus.svg';
+ import { useContext, useState } from 'react';
+import { CartContext } from '../../Context/CartContext';
+import minus from '../../icons/minus.svg';
  import plus from '../../icons/plus.svg';
 
  
- export default function CartItem({itemData , setData, data, index}){
+ export default function CartItem({index}){
+  const {data, setData} = useContext(CartContext);
+  const itemData = data[index];
   function handleClickMinus(e) {
     e.stopPropagation();
     if (itemData.quantity > 1) {

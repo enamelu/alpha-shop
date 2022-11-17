@@ -1,13 +1,12 @@
+import { useContext } from 'react';
+import { CartContext } from '../../Context/CartContext';
 import CartItem from './CartItem';
 
-
-export default function CartItems({data, setData}){
+export default function CartItems(){
+  const {data} = useContext(CartContext)
   const itemList =data.map((itemData, index) => (
       <CartItem
         className="product-container col col-12"
-        setData={setData}
-        data={data}
-        itemData={itemData}
         key={itemData.id}
         index={index}
       />
@@ -15,7 +14,7 @@ export default function CartItems({data, setData}){
   )
   return(
     <>
-      <section className="product-list col col-12" data-total-price={0}>
+      <section className="product-list col col-12">
         {itemList}
         </section>
       </>
