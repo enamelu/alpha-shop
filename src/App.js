@@ -19,11 +19,15 @@ import facebook from "./icons/facebook.svg";
 import whatsapp from "./icons/whatsapp.svg";
 import instagram from "./icons/instagram.svg";
 import { CartContext, initialData } from './Context/CartContext';
+import { CreditCardContext, creditCardDefault } from './Context/CreditCardContext';
 
 function App() {
   const [step, setStep] = useState(1);
   const [data, setData] = useState(initialData);
+  const [creditCardData, setCreditCardData] = useState(creditCardDefault)
+
   return (
+    <CreditCardContext.Provider value={{creditCardData, setCreditCardData}}>
     <CartContext.Provider value={{data, setData}}>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -232,6 +236,7 @@ function App() {
         </div>
       </footer>
     </CartContext.Provider>
+    </CreditCardContext.Provider>
   );
 }
 
