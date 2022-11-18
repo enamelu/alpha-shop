@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { CreditCardContext } from "../../Context/CreditCardContext";
+
 export default function ProgressControl({step, setStep}){
+  const {creditCardData, setCreditCardData} = useContext(CreditCardContext);
+
   function handleClickNext(e) {
     e.stopPropagation()
     setStep(step + 1)  
@@ -6,6 +11,10 @@ export default function ProgressControl({step, setStep}){
   function handleClickPrivious(e) {
     e.stopPropagation()
     setStep(step - 1)  
+  }
+  function handleClickConfirm(e) {
+    e.stopPropagation()
+    console.log(`name:${creditCardData.name}, cardNumber:${creditCardData.cardNumber}, exp:${creditCardData.exp}, CVC:${creditCardData.CVC}`)
   }
   let progressControlButtons;
   if(step === 1) {
@@ -45,7 +54,7 @@ export default function ProgressControl({step, setStep}){
           </svg>
           上一步
         </button>
-        <button className="next">確認下單</button>
+        <button className="next" onClick={handleClickConfirm}>確認下單</button>
       </section>
     );
   }

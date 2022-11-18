@@ -3,7 +3,7 @@ import { CreditCardContext } from "../../Context/CreditCardContext";
 
 
 export default function Step3(){
-  const {creditCardData, setCreditCardData} = useContext (CreditCardContext);
+  const {creditCardData, setCreditCardData} = useContext(CreditCardContext);
 
   function handleNameChange(e) {
     e.stopPropagation()
