@@ -1,8 +1,14 @@
 import { useContext } from "react";
 import { CreditCardContext } from "../../Context/CreditCardContext";
+import { CartContext } from "../../Context/CartContext";
 
 export default function ProgressControl({step, setStep}){
   const {creditCardData, setCreditCardData} = useContext(CreditCardContext);
+  const {data} = useContext(CartContext);
+  let totalPrice = 0;
+  for (let i =0 ; i<data.length ;i++){
+    totalPrice += data[i].price * data[i].quantity
+  }
 
   function handleClickNext(e) {
     e.stopPropagation()
@@ -14,7 +20,7 @@ export default function ProgressControl({step, setStep}){
   }
   function handleClickConfirm(e) {
     e.stopPropagation()
-    console.log(`name:${creditCardData.name}, cardNumber:${creditCardData.cardNumber}, exp:${creditCardData.exp}, CVC:${creditCardData.CVC}`)
+    console.log(`name:${creditCardData.name}, cardNumber:${creditCardData.cardNumber}, exp:${creditCardData.exp}, CVC:${creditCardData.CVC}, TotalPrice: ${totalPrice} `)
   }
   let progressControlButtons;
   if(step === 1) {
