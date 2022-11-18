@@ -3,9 +3,9 @@ import { CreditCardContext } from "../../Context/CreditCardContext";
 import { CartContext } from "../../Context/CartContext";
 
 export default function ProgressControl({step, setStep}){
-  const {creditCardData, setCreditCardData} = useContext(CreditCardContext);
+  const {creditCardData} = useContext(CreditCardContext);
   const {data} = useContext(CartContext);
-  let totalPrice = 0;
+  let totalPrice = 0;    ////這裡同時運算傳給console.log，主要總額計算在Cart.js並顯示於用戶購物車
   for (let i =0 ; i<data.length ;i++){
     totalPrice += data[i].price * data[i].quantity
   }

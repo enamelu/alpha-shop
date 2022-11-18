@@ -1,10 +1,10 @@
 import { createContext } from "react"
 
-export const creditCardDefault = { 
-  name: "John Doe" ,
-  cardNumber: "1111 2222 3333 4444" ,
-  exp: "MM/YY",
-  CVC: "123",
+export const creditCardDefault = {    //這裡預設不輸入值，底部文字已經寫在placeholder中
+  name: "" ,
+  cardNumber: "" ,
+  exp: "",
+  CVC: "",
 }
 
 export const CreditCardContext = createContext(creditCardDefault); 

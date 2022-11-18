@@ -2,8 +2,8 @@ import CartItems from './CartItems';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../Context/CartContext';
 
-export default function Cart(){
-  const {data} = useContext(CartContext);
+export default function Cart(){  //這裡是主要總額顯示於購物車，於ProgressControl中的是同時運算傳給console.log
+  const {data} = useContext(CartContext);   
   let totalPrice = 0;
   for (let i =0 ; i<data.length ;i++){
     totalPrice += data[i].price * data[i].quantity

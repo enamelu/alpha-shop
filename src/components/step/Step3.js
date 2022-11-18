@@ -8,8 +8,8 @@ export default function Step3(){
   function handleNameChange(e) {
     e.stopPropagation()
     setCreditCardData({
-      ...creditCardData,
-      name : e.target.value
+      ...creditCardData,    //複製所有內容
+      name : e.target.value  //除了name要更動成新增的值
     })
   }
   function handleCardNumberChange(e) {
