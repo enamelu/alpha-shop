@@ -2,25 +2,6 @@ import CartItems from './CartItems';
 import { useContext, useState } from 'react';
 import { CartContext } from '../../Context/CartContext';
 
-const initialData = [ 
-  {
-    id: '1',
-    name: '貓咪罐罐',
-    img: 'https://picsum.photos/300/300?text=1',
-    price: 100,
-    quantity: 2,
-  },
-  {
-    id: '2',
-    name: '貓咪干干',
-    img: 'https://picsum.photos/300/300?text=2',
-    price: 200,
-    quantity: 1,
-  },
-]
-
-
-
 export default function Cart(){
   const {data} = useContext(CartContext);
   let totalPrice = 0;
