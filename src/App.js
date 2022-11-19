@@ -7,7 +7,7 @@ import Step2 from "./components/step/Step2";
 
 
 import StepProgress from "./components/step/StepProgress";
-import Cart from "./components/Cart/Cart";
+import Cart from "./components/cart/Cart";
 
 import logo from "./icons/alphalogo.svg";
 import alphaShop from "./icons/alphaShop.svg";
